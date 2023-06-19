@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function onclickemp(){
+        var jsonstr='{"empid":101,"ename":"Rutuja Warungase","Salary":300000,"deptno":20,"MGR":true,"contactno":["7038231356","9011299412","9011745538"]}'
+         var emp=JSON.parse(jsonstr)
+         alert("<p>Empid:"+emp.empid+"</p>");
+
+         str="<table border=1>";
+         str+="<tr>";
+        str+="<td> empid : "+emp.empid+"</td>";
+        str+="</tr>";
+        str+="<tr>";
+        str+="<td> empname :"+emp.ename+"</td>";
+        str+="</tr>";
+        str+="<tr>";
+        str+="<td> salary :"+emp.Salary+"</td>";
+        str+="</tr>";
+        str+="<tr>";
+        str+="<td> deptno :"+emp.deptno+"</td>";
+        str+="</tr>";
+        str+="<tr>";
+        str+="<td> MGR : "+emp.MGR+"</td>";
+        str+="</tr>";
+        
+         for(i=0;i<emp.contactno.length;i++)
+         {
+            str+="<tr>";
+             str+="<td> contact no: "+i+"is "+emp.contactno[i]+"</td>";
+             //str+="<br/>"
+             str+="</tr>";
+         }
+           str+="</table>"
+  alert(str);
+  document.getElementById("1").innerHTML=str;
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <button type="button" id="emp" name="emp" onclick="onclickemp()"> button</button>
+
+    </form>
+    <div id="1"> </div>
+    
+</body>
+</html>
